@@ -1,67 +1,75 @@
-"use client"
-import React, { useState, useEffect } from 'react';
+"use client";
+
+import { ProductType } from "@/types/types";
+
+import React, { useEffect, useState } from "react";
 
 
-type Props={
-    price:number;
-    id:number;
-    options?:{title:string; additionalPrice:number }[];
-};
+const Price = ({ product }: { product: ProductType }) => {
+  const [total, setTotal] = useState(product.price);
+  const [quantity, setQuantity] = useState(1);
+  const [selected, setSelected] = useState(0);
 
-const Price = ({price,id,options}:Props) => {
-    const [total, setTotal] = useState(price);
-    const [quantity, setQuantity] = useState(1);
-    const [selected, setSelected] = useState(0);
+  
+  useEffect(() => {
+    if (product.options?.length) {
+      setTotal(
+        quantity * product.price + product.options[selected].additionalPrice
+      );
+    }
+  }, [quantity, selected, product]);
 
-    useEffect(() => {
-      
-        setTotal(
-            quantity*(options ? price + options[selected].additionalPrice : price)
-        )
-    
-      return () => {
-        
-      }
-    }, [quantity,selected,options,price])
-    
-
+ 
 
   return (
-    <div className='flex flex-col gap-2 md:gap-6'>
-        <h2 className='text-xl md:text-2xl font-bold text-orange-600'>${total.toFixed(2)}</h2>
-        {/*options container*/}
-        <div className='flex gap-4'>
-            {options?.map((option,index) =>(
-            <button key={option.title} className=' min-w-[6rem] p-2 ring-1 ring-orange-600 rounded-lg'
-            style={{
+    <div className="flex flex-col gap-4">
+      <h2 className="text-2xl font-bold">${total}</h2>
+      {/* OPTIONS CONTAINER */}
+      <div className="flex gap-4">
+        {product.options?.length &&
+          product.options?.map((option, index) => (
+            <button
+              key={option.title}
+              className="min-w-[6rem] p-2 ring-1 ring-orange-600 rounded-md"
+              style={{
                 background: selected===index ? "rgb(234 88 12)": "black",
                 color: selected=== index ? "black" : "white"
-            }}
-            onClick={()=> setSelected(index)}
-            >{option.title}</button>
-        ))}
+              }}
+              onClick={() => setSelected(index)}
+            >
+              {option.title}
+            </button>
+          ))}
+      </div>
+      {/* QUANTITY AND ADD BUTTON CONTAINER */}
+      <div className="flex justify-between items-center">
+        {/* QUANTITY */}
+        <div className="flex justify-between w-full p-3 ring-1 ring-orange-600">
+          <span>Quantity</span>
+          <div className="flex gap-4 items-center">
+            <button
+              onClick={() => setQuantity((prev) => (prev > 1 ? prev - 1 : 1))}
+            >
+              {"<"}
+            </button>
+            <span>{quantity}</span>
+            <button
+              onClick={() => setQuantity((prev) => (prev < 9 ? prev + 1 : 9))}
+            >
+              {">"}
+            </button>
+          </div>
         </div>
-        {/*quantity and addbutton*/}
-        <div className='flex justify-between items-center gap-3'>
-
-            <div className='flex justify-between w-full p-3 ring-1 ring-orange-600'>
-                <span>Quantity</span>
-                <div className='flex gap-3 items-center'>
-                    <button onClick={()=> setQuantity((prev) => (prev>1 ? prev-1 :1))}>{'<'}</button>
-                    <span>{quantity}</span>
-                    <button onClick={()=> setQuantity((prev) => (prev<9 ? prev+1 : 9))}>{'>'}</button>
-            </div>
-            </div>
-
-
-            {/*cart button*/}
-            <button className='uppercase w-56 bg-orange-600 text-black p-3'>Add to cart</button>
-
-        </div>
-
+        {/* CART BUTTON */}
+        <button
+          className="uppercase w-56 bg-orange-600 text-black p-3 ring-1"
+        
+        >
+          Add to Cart
+        </button>
+      </div>
     </div>
-  
-  )
-}
+  );
+};
 
-export default Price
+export default Price;

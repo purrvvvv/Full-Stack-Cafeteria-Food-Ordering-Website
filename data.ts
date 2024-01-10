@@ -17,8 +17,7 @@ type Product = {
       img: "/temporary/p1.png",
       price: 24.9,
       options: [
-        {
-          title: "Small",
+        {title: "Small",
           additionalPrice: 0,
         },
         {
