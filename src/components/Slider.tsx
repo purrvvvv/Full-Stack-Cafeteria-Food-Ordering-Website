@@ -46,7 +46,7 @@ const Slider = () => {
         <h1 className='text-2xl md:text-4xl  xl:text-5xl text-center uppercase p-4'>
           {data[currentSlide].title}
         </h1>
-        <Link href="/menu/pastas">
+        <Link href="/menu/pizzas">
         <button className='bg-orange-600 text-white py-3 px-6 uppercase rounded-full'>
           Order Now
         </button>

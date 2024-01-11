@@ -34,6 +34,7 @@ const Navbar = () => {
         </div>
   
          <UserLinks/>
+         <Carticon/>
      </div>
      
     </div>
