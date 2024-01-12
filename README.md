@@ -10,32 +10,33 @@ using **Next.js, Prisma, Stripe, Postgres, Docke, Tailwind-CSS**
 ## Features 🚀🚀
 - **Payment Gateway**
 
-Implemented a secure payment feature using `Stripe` for seamless and secured transactions.
+     Implemented a secure payment feature using `Stripe` for seamless and secured transactions.
 
 - **User Authentication**
 
-Implemented login functionality using `NextAuth.js` with Google account integrated with `Google Cloud`
+     Implemented login functionality using `NextAuth.js` with Google account integrated with `Google Cloud`
 
 - **Database Management**
 
-Utilized `Prisma` and `Docker` for PostgreSQL to handle database operations efficiently.
+    Utilized `Prisma` and `Docker` for PostgreSQL to handle database operations efficiently.
 
 - **Notifications**
 
-Integrated `React Toastify` library to provide real-time update notifications for car update order status etc...
+    Integrated `React Toastify` library to provide real-time update notifications for car update order status etc...
 
 - **Food Cart Management**
 
-Utilized `Zustand` for state management with `Persist-Middleware` to handle cart state across page refreshes.
+    Utilized `Zustand` for state management with `Persist-Middleware` to handle cart state across page refreshes.
 
 - **Admin Functionalities**
 
-Admins can update, delete, and add products to the menu.
-Change the order status after payment is made by a user.
+    Admins can update, delete, and add products to the menu.
+  
+    Change the order status after payment is made by a user.
 
 - **Responsive UI**
 
-Developed a fully responsive website, ensuring optimal user experience on various screen sizes.
+  Developed a fully responsive website, ensuring optimal user experience on various screen sizes.
 
 
 ## Tech Stack ⚙️
