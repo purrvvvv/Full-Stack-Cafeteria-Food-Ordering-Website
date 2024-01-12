@@ -9,7 +9,7 @@ using **Next.js, Prisma, Stripe, Postgres, Docke, Tailwind-CSS**
 ## Features
 - **Payment Gateway**
 
-Implemented a secure payment feature using *Stripe* for seamless and secured transactions.
+Implemented a secure payment feature using `Stripe` for seamless and secured transactions.
 
 - **User Authentication**
 
