@@ -66,14 +66,13 @@ const AddPage = () => {
   const upload = async () => {
     const data = new FormData();
     data.append("file", file!);
-    data.append("upload_preset", "restaurant");
+    data.append("upload_preset", "cafeteria-next");
 
     const res = await fetch("https://api.cloudinary.com/v1_1/dtnugfawa/image/upload", {
-        method: "POST",
-        
-        body: data,
-      });
-      
+      method: "POST",
+      headers: { "Content-Type": "multipart/form-data" },
+      body: data,
+    });
 
     const resData = await res.json();
     return resData.url;
@@ -102,9 +101,9 @@ const AddPage = () => {
   };
 
   return (
-    <div className="p-4 lg:px-20 xl:px-40 h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)] flex items-center justify-center text-red-500">
+    <div className="p-4 lg:px-20 xl:px-40 h-[100vh] md:h-[100vh)] flex items-center justify-center text-red-500 bg-black">
       <form onSubmit={handleSubmit} className="flex flex-wrap gap-6">
-        <h1 className="text-4xl mb-2 text-gray-300 font-bold">
+        <h1 className="text-4xl mb-2 text-orange-600 font-bold">
           Add New Product
         </h1>
         <div className="w-full flex flex-col gap-2 ">
@@ -180,11 +179,15 @@ const AddPage = () => {
               onChange={changeOption}
             />
             <button
-              className="bg-gray-500 p-2 text-white"
-              onClick={() => setOptions((prev) => [...prev, option])}
-            >
-              Add Option
-            </button>
+  className="bg-gray-500 p-2 text-white"
+  onClick={(e) => {
+    e.preventDefault(); // Add this line to prevent form submission
+    setOptions((prev) => [...prev, option]);
+  }}
+>
+  Add Option
+</button>
+
           </div>
           <div className="flex flex-wrap gap-4 mt-2">
             {options.map((opt) => (
@@ -205,7 +208,7 @@ const AddPage = () => {
         </div>
         <button
           type="submit"
-          className="bg-red-500 p-4 text-white w-48 rounded-md relative h-14 flex items-center justify-center"
+          className="bg-orange-600 p-4 text-white w-48 rounded-md relative h-14 flex items-center justify-center"
         >
           Submit
         </button>

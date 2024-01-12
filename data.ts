@@ -227,7 +227,7 @@ type Product = {
     },
     {
       id: 2,
-      title: "Mediterranean Delight",
+      title: "Mediterranean Delight ",
       desc: "Embark on a culinary journey with this Mediterranean-inspired creation, featuring zesty feta cheese, Kalamata olives, sun-dried tomatoes, and a sprinkle of oregano.",
       img: "/temporary/p8.png",
       price: 32.9,
