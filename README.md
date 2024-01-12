@@ -1,12 +1,13 @@
 
-# FULL-STACK CAFETERIA-FOOD-ORDERING APP 
+# FULL-STACK CAFETERIA-FOOD-ORDERING APP 🍔🍕
 
 using **Next.js, Prisma, Stripe, Postgres, Docke, Tailwind-CSS**
 
 
 
 "CAFETERIA-NEXT" is a full-stack web application for cafeteria food ordering. It provides users with a seamless experience of browsing through the menu, **selecting food items**, and **placing orders** with **Secured Payments**. The project incorporates various technologies to ensure efficient data management, **User Authentication**, and a **Responsive UI**.
-## Features
+
+## Features 🚀🚀
 - **Payment Gateway**
 
 Implemented a secure payment feature using `Stripe` for seamless and secured transactions.
@@ -37,7 +38,7 @@ Change the order status after payment is made by a user.
 Developed a fully responsive website, ensuring optimal user experience on various screen sizes.
 
 
-## Tech Stack
+## Tech Stack ⚙️
 
  
 **Frontend:**
@@ -66,7 +67,7 @@ Developed a fully responsive website, ensuring optimal user experience on variou
 - Stripe
 
 
-## Screenshots
+## Screenshots 📲
 
 **HomePage:**
 
