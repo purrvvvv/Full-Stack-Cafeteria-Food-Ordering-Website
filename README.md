@@ -1,7 +1,7 @@
 
 # FULL-STACK CAFETERIA-FOOD-ORDERING APP 🍔🍕
 
-using **Next.js, Prisma, Stripe, Postgres, Docke, Tailwind-CSS**
+using **Next.js, Prisma, Stripe, Postgresql, Docker, Tailwind-CSS**
 
 
 
